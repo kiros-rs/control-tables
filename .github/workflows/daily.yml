@@ -12,7 +12,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-          name: 'Checkout'
+          name: 'Checkout scraper'
           with:
             repository: 'kiros-rs/dynamixel-scraper'
         - uses: actions-rs/toolchain@v1.0.6
@@ -22,10 +22,18 @@ jobs:
         - run: sudo apt-get install -y libudev-dev
           name: 'Install libudev'
         - uses: actions-rs/cargo@v1.0.1
-          name: 'Run scraper'
+          name: 'Build scraper'
           with:
-            command: run
+            command: build
             args: --release
+        - run: 'sudo cp target/release/dynamixel-scraper /bin'
+          name: 'Install binary'
+        - uses: actions/checkout@v2
+          name: 'Checkout tables'
+          with:
+            repository: 'kiros-rs/tables'
+        - run: 'dynamixel-scraper'
+          name: 'Run scraper'
         - uses: EndBug/add-and-commit@v7.2.1
           name: 'Commit changes'
           with:
