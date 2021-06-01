@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: 'https://github.com/kiros-rs/dynamixel-scraper'
+          repository: 'kiros-rs/dynamixel-scraper'
       - uses: actions-rs/toolchain@v1.0.6
         with:
           toolchain: nightly
