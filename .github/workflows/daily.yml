@@ -1,0 +1,22 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 12 * * *'
+
+name: Daily update
+
+jobs:
+  build_and_run:
+    name: Dynamixel Scraper
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'https://github.com/kiros-rs/dynamixel-scraper'
+      - uses: actions-rs/toolchain@v1.06
+        with:
+          toolchain: nightly
+      - uses: actions-rs/cargo@v1.01
+        with:
+          command: run
+          args: --release
