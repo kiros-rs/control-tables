@@ -1,6 +1,6 @@
 [
     (
-        address: 0,
+        address: Standard(0),
         size: 2,
         data_name: Some("Model Number"),
         description: None,
@@ -11,7 +11,7 @@
         modbus: None,
     ),// [0]
     (
-        address: 2,
+        address: Standard(2),
         size: 4,
         data_name: Some("Model Information"),
         description: None,
@@ -22,7 +22,7 @@
         modbus: None,
     ),// [1]
     (
-        address: 6,
+        address: Standard(6),
         size: 1,
         data_name: Some("Firmware Version"),
         description: None,
@@ -33,7 +33,7 @@
         modbus: None,
     ),// [2]
     (
-        address: 7,
+        address: Standard(7),
         size: 1,
         data_name: Some("ID"),
         description: None,
@@ -44,7 +44,7 @@
         modbus: None,
     ),// [3]
     (
-        address: 8,
+        address: Standard(8),
         size: 1,
         data_name: Some("Baud Rate"),
         description: None,
@@ -55,7 +55,7 @@
         modbus: None,
     ),// [4]
     (
-        address: 9,
+        address: Standard(9),
         size: 1,
         data_name: Some("Return Delay Time"),
         description: None,
@@ -66,7 +66,7 @@
         modbus: None,
     ),// [5]
     (
-        address: 10,
+        address: Standard(10),
         size: 1,
         data_name: Some("Drive Mode"),
         description: None,
@@ -77,7 +77,7 @@
         modbus: None,
     ),// [6]
     (
-        address: 11,
+        address: Standard(11),
         size: 1,
         data_name: Some("Operating Mode"),
         description: None,
@@ -88,7 +88,7 @@
         modbus: None,
     ),// [7]
     (
-        address: 12,
+        address: Standard(12),
         size: 1,
         data_name: Some("Secondary(Shadow) ID"),
         description: None,
@@ -99,7 +99,7 @@
         modbus: None,
     ),// [8]
     (
-        address: 13,
+        address: Standard(13),
         size: 1,
         data_name: Some("Protocol Type"),
         description: None,
@@ -110,7 +110,7 @@
         modbus: None,
     ),// [9]
     (
-        address: 20,
+        address: Standard(20),
         size: 4,
         data_name: Some("Homing Offset"),
         description: None,
@@ -121,7 +121,7 @@
         modbus: None,
     ),// [10]
     (
-        address: 24,
+        address: Standard(24),
         size: 4,
         data_name: Some("Moving Threshold"),
         description: None,
@@ -132,7 +132,7 @@
         modbus: None,
     ),// [11]
     (
-        address: 31,
+        address: Standard(31),
         size: 1,
         data_name: Some("Temperature Limit"),
         description: None,
@@ -143,7 +143,7 @@
         modbus: None,
     ),// [12]
     (
-        address: 32,
+        address: Standard(32),
         size: 2,
         data_name: Some("Max Voltage Limit"),
         description: None,
@@ -154,7 +154,7 @@
         modbus: None,
     ),// [13]
     (
-        address: 34,
+        address: Standard(34),
         size: 2,
         data_name: Some("Min Voltage Limit"),
         description: None,
@@ -165,7 +165,7 @@
         modbus: None,
     ),// [14]
     (
-        address: 36,
+        address: Standard(36),
         size: 2,
         data_name: Some("PWM Limit"),
         description: None,
@@ -176,7 +176,7 @@
         modbus: None,
     ),// [15]
     (
-        address: 38,
+        address: Standard(38),
         size: 2,
         data_name: Some("Current Limit"),
         description: None,
@@ -187,7 +187,7 @@
         modbus: None,
     ),// [16]
     (
-        address: 44,
+        address: Standard(44),
         size: 4,
         data_name: Some("Velocity Limit"),
         description: None,
@@ -198,7 +198,7 @@
         modbus: None,
     ),// [17]
     (
-        address: 48,
+        address: Standard(48),
         size: 4,
         data_name: Some("Max Position Limit"),
         description: None,
@@ -209,7 +209,7 @@
         modbus: None,
     ),// [18]
     (
-        address: 52,
+        address: Standard(52),
         size: 4,
         data_name: Some("Min Position Limit"),
         description: None,
@@ -220,7 +220,7 @@
         modbus: None,
     ),// [19]
     (
-        address: 63,
+        address: Standard(63),
         size: 1,
         data_name: Some("Shutdown"),
         description: None,
@@ -231,7 +231,7 @@
         modbus: None,
     ),// [20]
     (
-        address: 64,
+        address: Standard(64),
         size: 1,
         data_name: Some("Torque Enable"),
         description: None,
@@ -242,7 +242,7 @@
         modbus: None,
     ),// [21]
     (
-        address: 65,
+        address: Standard(65),
         size: 1,
         data_name: Some("LED"),
         description: None,
@@ -253,7 +253,7 @@
         modbus: None,
     ),// [22]
     (
-        address: 68,
+        address: Standard(68),
         size: 1,
         data_name: Some("Status Return Level"),
         description: None,
@@ -264,7 +264,7 @@
         modbus: None,
     ),// [23]
     (
-        address: 69,
+        address: Standard(69),
         size: 1,
         data_name: Some("Registered Instruction"),
         description: None,
@@ -275,7 +275,7 @@
         modbus: None,
     ),// [24]
     (
-        address: 70,
+        address: Standard(70),
         size: 1,
         data_name: Some("Hardware Error Status"),
         description: None,
@@ -286,7 +286,7 @@
         modbus: None,
     ),// [25]
     (
-        address: 76,
+        address: Standard(76),
         size: 2,
         data_name: Some("Velocity I Gain"),
         description: None,
@@ -297,7 +297,7 @@
         modbus: None,
     ),// [26]
     (
-        address: 78,
+        address: Standard(78),
         size: 2,
         data_name: Some("Velocity P Gain"),
         description: None,
@@ -308,7 +308,7 @@
         modbus: None,
     ),// [27]
     (
-        address: 80,
+        address: Standard(80),
         size: 2,
         data_name: Some("Position D Gain"),
         description: None,
@@ -319,7 +319,7 @@
         modbus: None,
     ),// [28]
     (
-        address: 82,
+        address: Standard(82),
         size: 2,
         data_name: Some("Position I Gain"),
         description: None,
@@ -330,7 +330,7 @@
         modbus: None,
     ),// [29]
     (
-        address: 84,
+        address: Standard(84),
         size: 2,
         data_name: Some("Position P Gain"),
         description: None,
@@ -341,7 +341,7 @@
         modbus: None,
     ),// [30]
     (
-        address: 88,
+        address: Standard(88),
         size: 2,
         data_name: Some("Feedforward 2nd Gain"),
         description: None,
@@ -352,7 +352,7 @@
         modbus: None,
     ),// [31]
     (
-        address: 90,
+        address: Standard(90),
         size: 2,
         data_name: Some("Feedforward 1st Gain"),
         description: None,
@@ -363,7 +363,7 @@
         modbus: None,
     ),// [32]
     (
-        address: 98,
+        address: Standard(98),
         size: 1,
         data_name: Some("Bus Watchdog"),
         description: None,
@@ -374,7 +374,7 @@
         modbus: None,
     ),// [33]
     (
-        address: 100,
+        address: Standard(100),
         size: 2,
         data_name: Some("Goal PWM"),
         description: None,
@@ -385,7 +385,7 @@
         modbus: None,
     ),// [34]
     (
-        address: 102,
+        address: Standard(102),
         size: 2,
         data_name: Some("Goal Current"),
         description: None,
@@ -396,7 +396,7 @@
         modbus: None,
     ),// [35]
     (
-        address: 104,
+        address: Standard(104),
         size: 4,
         data_name: Some("Goal Velocity"),
         description: None,
@@ -407,7 +407,7 @@
         modbus: None,
     ),// [36]
     (
-        address: 108,
+        address: Standard(108),
         size: 4,
         data_name: Some("Profile Acceleration"),
         description: None,
@@ -418,7 +418,7 @@
         modbus: None,
     ),// [37]
     (
-        address: 112,
+        address: Standard(112),
         size: 4,
         data_name: Some("Profile Velocity"),
         description: None,
@@ -429,7 +429,7 @@
         modbus: None,
     ),// [38]
     (
-        address: 116,
+        address: Standard(116),
         size: 4,
         data_name: Some("Goal Position"),
         description: None,
@@ -440,7 +440,7 @@
         modbus: None,
     ),// [39]
     (
-        address: 120,
+        address: Standard(120),
         size: 2,
         data_name: Some("Realtime Tick"),
         description: None,
@@ -451,7 +451,7 @@
         modbus: None,
     ),// [40]
     (
-        address: 122,
+        address: Standard(122),
         size: 1,
         data_name: Some("Moving"),
         description: None,
@@ -462,7 +462,7 @@
         modbus: None,
     ),// [41]
     (
-        address: 123,
+        address: Standard(123),
         size: 1,
         data_name: Some("Moving Status"),
         description: None,
@@ -473,7 +473,7 @@
         modbus: None,
     ),// [42]
     (
-        address: 124,
+        address: Standard(124),
         size: 2,
         data_name: Some("Present PWM"),
         description: None,
@@ -484,7 +484,7 @@
         modbus: None,
     ),// [43]
     (
-        address: 126,
+        address: Standard(126),
         size: 2,
         data_name: Some("Present Current"),
         description: None,
@@ -495,7 +495,7 @@
         modbus: None,
     ),// [44]
     (
-        address: 128,
+        address: Standard(128),
         size: 4,
         data_name: Some("Present Velocity"),
         description: None,
@@ -506,7 +506,7 @@
         modbus: None,
     ),// [45]
     (
-        address: 132,
+        address: Standard(132),
         size: 4,
         data_name: Some("Present Position"),
         description: None,
@@ -517,7 +517,7 @@
         modbus: None,
     ),// [46]
     (
-        address: 136,
+        address: Standard(136),
         size: 4,
         data_name: Some("Velocity Trajectory"),
         description: None,
@@ -528,7 +528,7 @@
         modbus: None,
     ),// [47]
     (
-        address: 140,
+        address: Standard(140),
         size: 4,
         data_name: Some("Position Trajectory"),
         description: None,
@@ -539,7 +539,7 @@
         modbus: None,
     ),// [48]
     (
-        address: 144,
+        address: Standard(144),
         size: 2,
         data_name: Some("Present Input Voltage"),
         description: None,
@@ -550,7 +550,7 @@
         modbus: None,
     ),// [49]
     (
-        address: 146,
+        address: Standard(146),
         size: 1,
         data_name: Some("Present Temperature"),
         description: None,

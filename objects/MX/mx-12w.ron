@@ -1,6 +1,6 @@
 [
     (
-        address: 0,
+        address: Standard(0),
         size: 2,
         data_name: Some("Model Number"),
         description: Some("Model Number"),
@@ -11,7 +11,7 @@
         modbus: None,
     ),// [0]
     (
-        address: 2,
+        address: Standard(2),
         size: 1,
         data_name: Some("Firmware Version"),
         description: Some("Firmware Version"),
@@ -22,7 +22,7 @@
         modbus: None,
     ),// [1]
     (
-        address: 3,
+        address: Standard(3),
         size: 1,
         data_name: Some("ID"),
         description: Some("DYNAMIXEL ID"),
@@ -33,7 +33,7 @@
         modbus: None,
     ),// [2]
     (
-        address: 4,
+        address: Standard(4),
         size: 1,
         data_name: Some("Baud Rate"),
         description: Some("Communication Speed"),
@@ -44,7 +44,7 @@
         modbus: None,
     ),// [3]
     (
-        address: 5,
+        address: Standard(5),
         size: 1,
         data_name: Some("Return Delay Time"),
         description: Some("Response Delay Time"),
@@ -55,7 +55,7 @@
         modbus: None,
     ),// [4]
     (
-        address: 6,
+        address: Standard(6),
         size: 2,
         data_name: Some("CW Angle Limit"),
         description: Some("Clockwise Angle Limit"),
@@ -66,7 +66,7 @@
         modbus: None,
     ),// [5]
     (
-        address: 8,
+        address: Standard(8),
         size: 2,
         data_name: Some("CCW Angle Limit"),
         description: Some("Counter-Clockwise Angle Limit"),
@@ -77,7 +77,7 @@
         modbus: None,
     ),// [6]
     (
-        address: 11,
+        address: Standard(11),
         size: 1,
         data_name: Some("Temperature Limit"),
         description: Some("Maximum Internal Temperature Limit"),
@@ -88,7 +88,7 @@
         modbus: None,
     ),// [7]
     (
-        address: 12,
+        address: Standard(12),
         size: 1,
         data_name: Some("Min Voltage Limit"),
         description: Some("Minimum Input Voltage Limit"),
@@ -99,7 +99,7 @@
         modbus: None,
     ),// [8]
     (
-        address: 13,
+        address: Standard(13),
         size: 1,
         data_name: Some("Max Voltage Limit"),
         description: Some("Maximum Input Voltage Limit"),
@@ -110,7 +110,7 @@
         modbus: None,
     ),// [9]
     (
-        address: 14,
+        address: Standard(14),
         size: 2,
         data_name: Some("Max Torque"),
         description: Some("Maximun Torque"),
@@ -121,7 +121,7 @@
         modbus: None,
     ),// [10]
     (
-        address: 16,
+        address: Standard(16),
         size: 1,
         data_name: Some("Status Return Level"),
         description: Some("Select Types of Status Return"),
@@ -132,7 +132,7 @@
         modbus: None,
     ),// [11]
     (
-        address: 17,
+        address: Standard(17),
         size: 1,
         data_name: Some("Alarm LED"),
         description: Some("LED for Alarm"),
@@ -143,7 +143,7 @@
         modbus: None,
     ),// [12]
     (
-        address: 18,
+        address: Standard(18),
         size: 1,
         data_name: Some("Shutdown"),
         description: Some("Shutdown Error Information"),
@@ -154,7 +154,7 @@
         modbus: None,
     ),// [13]
     (
-        address: 20,
+        address: Standard(20),
         size: 2,
         data_name: Some("Multi Turn Offset"),
         description: Some("Adjust Position with Offset"),
@@ -165,7 +165,7 @@
         modbus: None,
     ),// [14]
     (
-        address: 22,
+        address: Standard(22),
         size: 1,
         data_name: Some("Resolution Divider"),
         description: Some("Divider for Position Resolution"),
@@ -176,7 +176,7 @@
         modbus: None,
     ),// [15]
     (
-        address: 24,
+        address: Standard(24),
         size: 1,
         data_name: Some("Torque Enable"),
         description: Some("Motor Torque On/Off"),
@@ -187,7 +187,7 @@
         modbus: None,
     ),// [16]
     (
-        address: 25,
+        address: Standard(25),
         size: 1,
         data_name: Some("LED"),
         description: Some("Status LED On/Off"),
@@ -198,7 +198,7 @@
         modbus: None,
     ),// [17]
     (
-        address: 26,
+        address: Standard(26),
         size: 1,
         data_name: Some("D Gain"),
         description: Some("Derivative Gain"),
@@ -209,7 +209,7 @@
         modbus: None,
     ),// [18]
     (
-        address: 27,
+        address: Standard(27),
         size: 1,
         data_name: Some("I Gain"),
         description: Some("Integral Gain"),
@@ -220,7 +220,7 @@
         modbus: None,
     ),// [19]
     (
-        address: 28,
+        address: Standard(28),
         size: 1,
         data_name: Some("P Gain"),
         description: Some("Proportional Gain"),
@@ -231,7 +231,7 @@
         modbus: None,
     ),// [20]
     (
-        address: 30,
+        address: Standard(30),
         size: 2,
         data_name: Some("Goal Position"),
         description: Some("Desired Position"),
@@ -242,7 +242,7 @@
         modbus: None,
     ),// [21]
     (
-        address: 32,
+        address: Standard(32),
         size: 2,
         data_name: Some("Moving Speed"),
         description: Some("Moving Speed(Moving Velocity)"),
@@ -253,7 +253,7 @@
         modbus: None,
     ),// [22]
     (
-        address: 34,
+        address: Standard(34),
         size: 2,
         data_name: Some("Torque Limit"),
         description: Some("Torque Limit"),
@@ -264,7 +264,7 @@
         modbus: None,
     ),// [23]
     (
-        address: 36,
+        address: Standard(36),
         size: 2,
         data_name: Some("Present Position"),
         description: Some("Present Position"),
@@ -275,7 +275,7 @@
         modbus: None,
     ),// [24]
     (
-        address: 38,
+        address: Standard(38),
         size: 2,
         data_name: Some("Present Speed"),
         description: Some("Present Speed"),
@@ -286,7 +286,7 @@
         modbus: None,
     ),// [25]
     (
-        address: 40,
+        address: Standard(40),
         size: 2,
         data_name: Some("Present Load"),
         description: Some("Present Load"),
@@ -297,7 +297,7 @@
         modbus: None,
     ),// [26]
     (
-        address: 42,
+        address: Standard(42),
         size: 1,
         data_name: Some("Present Voltage"),
         description: Some("Present Voltage"),
@@ -308,7 +308,7 @@
         modbus: None,
     ),// [27]
     (
-        address: 43,
+        address: Standard(43),
         size: 1,
         data_name: Some("Present Temperature"),
         description: Some("Present Temperature"),
@@ -319,7 +319,7 @@
         modbus: None,
     ),// [28]
     (
-        address: 44,
+        address: Standard(44),
         size: 1,
         data_name: Some("Registered"),
         description: Some("If Instruction is registered"),
@@ -330,7 +330,7 @@
         modbus: None,
     ),// [29]
     (
-        address: 46,
+        address: Standard(46),
         size: 1,
         data_name: Some("Moving"),
         description: Some("Movement Status"),
@@ -341,7 +341,7 @@
         modbus: None,
     ),// [30]
     (
-        address: 47,
+        address: Standard(47),
         size: 1,
         data_name: Some("Lock"),
         description: Some("Locking EEPROM"),
@@ -352,7 +352,7 @@
         modbus: None,
     ),// [31]
     (
-        address: 48,
+        address: Standard(48),
         size: 2,
         data_name: Some("Punch"),
         description: Some("Minimum Current Threshold"),
@@ -363,7 +363,7 @@
         modbus: None,
     ),// [32]
     (
-        address: 50,
+        address: Standard(50),
         size: 2,
         data_name: Some("Realtime Tick"),
         description: Some("Count Time in millisecond"),
@@ -374,7 +374,7 @@
         modbus: None,
     ),// [33]
     (
-        address: 73,
+        address: Standard(73),
         size: 1,
         data_name: Some("Goal Acceleration"),
         description: Some("Goal Acceleration"),
