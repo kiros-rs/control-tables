@@ -25,7 +25,7 @@ jobs:
           name: 'Build scraper'
           with:
             command: build
-        - run: 'sudo cp target/release/dynamixel-scraper /bin'
+        - run: 'sudo cp target/debug/dynamixel-scraper /bin'
           name: 'Install binary'
         - uses: actions/checkout@v2
           name: 'Checkout tables'
