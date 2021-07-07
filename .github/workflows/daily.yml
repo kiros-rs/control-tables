@@ -20,6 +20,8 @@ jobs:
           name: 'Install nightly toolchain'
           with:
             toolchain: nightly
+        - run: 'cd $GITHUB_WORKSPACE/dynamixel-scraper'
+          name: 'Enter dynamixel-scraper directory'
         - uses: actions-rs/cargo@v1.0.1
           name: 'Build scraper'
           with:
@@ -31,7 +33,7 @@ jobs:
           with:
             repository: 'kiros-rs/control-tables'
             path: lib
-        - run: 'cd .. && dynamixel-scraper --lib && cd lib'
+        - run: 'cd $GITHUB_WORKSPACE && dynamixel-scraper --lib && cd lib'
           name: 'Run scraper'
         - uses: EndBug/add-and-commit@v7.2.1
           name: 'Commit changes'
