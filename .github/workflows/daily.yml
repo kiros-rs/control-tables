@@ -32,11 +32,10 @@ jobs:
         - uses: EndBug/add-and-commit@v7.2.1
           name: 'Commit changes'
           with:
-            add: "['lib']"
             default_author: github_actions
             message: 'Daily table update'
             push: true
-            cwd: '$GITHUB_WORKSPACE/lib'
+            cwd: 'lib'
 # This should be fixed later
 #        - uses: actions/upload-artifact@v2.2.3
 #          name: 'Upload CSV artifacts'
