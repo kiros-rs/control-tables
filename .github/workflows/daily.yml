@@ -11,6 +11,6 @@ jobs:
       name: Build & Run
       runs-on: ubuntu-latest
       steps:
-        - run: ls -la
+        - run: ls -la && pwd
           name: 'List files'
           
