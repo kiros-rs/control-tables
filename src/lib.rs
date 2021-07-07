@@ -1,7 +1,7 @@
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-pub enum AddressError {
+pub enum ControlTableError {
     #[error("Dynamixel model {model:?} does not support field {name:?}")]
     NoMatchingAddress { model: Model, name: DataName },
 }
@@ -227,7 +227,7 @@ pub enum Model {
     XW540T260,
 }
 
-pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> {
+pub const fn address(model: Model, name: DataName) -> Result<u16, ControlTableError> {
     match model {
         #[cfg(feature = "AX")]
         Model::AX12A => match name {
@@ -263,7 +263,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "AX")]
         Model::AX12W => match name {
@@ -299,7 +299,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "AX")]
         Model::AX18A => match name {
@@ -335,7 +335,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "DX")]
         Model::DX113 => match name {
@@ -371,7 +371,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "DX")]
         Model::DX116 => match name {
@@ -407,7 +407,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "DX")]
         Model::DX117 => match name {
@@ -443,7 +443,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "EX")]
         Model::EX106 => match name {
@@ -481,7 +481,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
             DataName::SensedCurrent => Ok(56),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX106 => match name {
@@ -524,7 +524,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::TorqueCtrlModeEnable => Ok(70),
             DataName::GoalTorque => Ok(71),
             DataName::GoalAcceleration => Ok(73),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX1062 => match name {
@@ -580,7 +580,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX12W => match name {
@@ -619,7 +619,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Punch => Ok(48),
             DataName::RealtimeTick => Ok(50),
             DataName::GoalAcceleration => Ok(73),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX28 => match name {
@@ -658,7 +658,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Punch => Ok(48),
             DataName::RealtimeTick => Ok(50),
             DataName::GoalAcceleration => Ok(73),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX282 => match name {
@@ -712,7 +712,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX64 => match name {
@@ -754,7 +754,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::TorqueCtrlModeEnable => Ok(70),
             DataName::GoalTorque => Ok(71),
             DataName::GoalAcceleration => Ok(73),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "MX")]
         Model::MX642 => match name {
@@ -810,7 +810,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
         Model::PH42020S300R => match name {
@@ -870,7 +870,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
         Model::PH54100S500R => match name {
@@ -930,7 +930,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
         Model::PH54200S500R => match name {
@@ -990,7 +990,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
         Model::PM42010S260R => match name {
@@ -1050,7 +1050,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
         Model::PM54040S250R => match name {
@@ -1110,7 +1110,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
         Model::PM54060S250R => match name {
@@ -1170,7 +1170,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::H4220S300R => match name {
@@ -1214,7 +1214,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::H4220S300RA => match name {
@@ -1273,7 +1273,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::H54100S500R => match name {
@@ -1317,7 +1317,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::H54100S500RA => match name {
@@ -1376,7 +1376,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::H54200S500R => match name {
@@ -1420,7 +1420,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::H54200S500RA => match name {
@@ -1479,7 +1479,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::L4210S300R => match name {
@@ -1523,7 +1523,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::L5430S400R => match name {
@@ -1567,7 +1567,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::L5430S500R => match name {
@@ -1611,7 +1611,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::L5450S290R => match name {
@@ -1655,7 +1655,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::L5450S500R => match name {
@@ -1699,7 +1699,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::M4210S260R => match name {
@@ -1743,7 +1743,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::M4210S260RA => match name {
@@ -1802,7 +1802,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::M5440S250R => match name {
@@ -1846,7 +1846,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::M5440S250RA => match name {
@@ -1905,7 +1905,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::M5460S250R => match name {
@@ -1949,7 +1949,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::RegisteredInstruction => Ok(890),
             DataName::StatusReturnLevel => Ok(891),
             DataName::HardwareErrorStatus => Ok(892),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "PRO")]
         Model::M5460S250RA => match name {
@@ -2008,7 +2008,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(592),
             DataName::PresentTemperature => Ok(594),
             DataName::ExternalPortData => Ok(606),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "RX")]
         Model::RX10 => match name {
@@ -2044,7 +2044,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "RX")]
         Model::RX24F => match name {
@@ -2080,7 +2080,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "RX")]
         Model::RX28 => match name {
@@ -2116,7 +2116,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "RX")]
         Model::RX64 => match name {
@@ -2152,7 +2152,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(46),
             DataName::Lock => Ok(47),
             DataName::Punch => Ok(48),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XC430W150 => match name {
@@ -2205,7 +2205,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XC430W240 => match name {
@@ -2258,7 +2258,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XC430W250 => match name {
@@ -2311,7 +2311,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH430V210 => match name {
@@ -2366,7 +2366,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH430V350 => match name {
@@ -2421,7 +2421,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH430W210 => match name {
@@ -2476,7 +2476,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH430W350 => match name {
@@ -2531,7 +2531,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH540V150 => match name {
@@ -2588,7 +2588,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
             DataName::ExternalPortData => Ok(156),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH540V270 => match name {
@@ -2645,7 +2645,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
             DataName::ExternalPortData => Ok(156),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH540W150 => match name {
@@ -2702,7 +2702,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
             DataName::ExternalPortData => Ok(156),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XH540W270 => match name {
@@ -2759,7 +2759,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
             DataName::ExternalPortData => Ok(156),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XL320 => match name {
@@ -2794,7 +2794,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::Moving => Ok(49),
             DataName::HardwareErrorStatus => Ok(50),
             DataName::Punch => Ok(51),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XL330M077 => match name {
@@ -2850,7 +2850,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XL330M288 => match name {
@@ -2906,7 +2906,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XL430W250 => match name {
@@ -2959,7 +2959,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XM430W210 => match name {
@@ -3014,7 +3014,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XM430W350 => match name {
@@ -3069,7 +3069,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XM540W150 => match name {
@@ -3126,7 +3126,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
             DataName::ExternalPortData => Ok(156),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XM540W270 => match name {
@@ -3183,7 +3183,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
             DataName::ExternalPortData => Ok(156),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XW540T140 => match name {
@@ -3237,7 +3237,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "X")]
         Model::XW540T260 => match name {
@@ -3291,7 +3291,7 @@ pub const fn address(model: Model, name: DataName) -> Result<u16, AddressError> 
             DataName::PositionTrajectory => Ok(140),
             DataName::PresentInputVoltage => Ok(144),
             DataName::PresentTemperature => Ok(146),
-            _ => Err(AddressError::NoMatchingAddress { model, name }),
+            _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
     }
 }
