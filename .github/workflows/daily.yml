@@ -15,6 +15,7 @@ jobs:
           name: 'Checkout dynamixel-scraper repository'
           with:
             repository: 'kiros-rs/dynamixel-scraper'
+            path: 'dynamixel-scraper'
         - uses: actions-rs/toolchain@v1.0.6
           name: 'Install nightly toolchain'
           with:
