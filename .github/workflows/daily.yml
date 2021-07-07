@@ -22,8 +22,6 @@ jobs:
             toolchain: nightly
         - run: 'cd $GITHUB_WORKSPACE/dynamixel-scraper && cargo build'
           name: 'Build scraper'
-        - run: 'sudo cp target/debug/dynamixel-scraper /bin'
-          name: 'Install binary'
         - uses: actions/checkout@v2
           name: 'Checkout control-tables repository'
           with:
