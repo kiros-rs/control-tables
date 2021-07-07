@@ -4,6 +4,8 @@ This repository contains every control table available on the [Robotis E-Manual]
 If you would like to download the tables in a particular format, please see the artifacts under the latest [daily action](https://github.com/kiros-rs/control-tables/actions/workflows/daily.yml) workflow run.
 Currently supported formats:
 - CSV
-- [RON](https://github.com/ron-rs/ron) ([see the `ControlTableData` struct](https://github.com/kiros-rs/dynamixel-scraper/blob/main/src/serialize.rs))
+- [RON](https://github.com/ron-rs/ron) (see the [`ControlTableData`](https://github.com/kiros-rs/dynamixel-scraper/blob/main/src/serialize.rs) struct)
 
 Hopefully this helps you when working with Dynamixel actuators!
+
+NOTE: Should add some library examples here
