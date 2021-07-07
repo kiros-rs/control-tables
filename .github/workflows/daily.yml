@@ -30,7 +30,7 @@ jobs:
           with:
             repository: 'kiros-rs/control-tables'
             path: lib
-        - run: 'cd .. && dynamixel-scraper --lib && cd lib'
+        - run: 'cd .. && dynamixel-scraper --lib --ron && cd lib'
           name: 'Run scraper'
         - uses: EndBug/add-and-commit@v7.2.1
           name: 'Commit changes'
@@ -39,13 +39,14 @@ jobs:
             default_author: github_actions
             message: 'Daily table update'
             push: true
-        - uses: actions/upload-artifact@v2.2.3
-          name: 'Upload CSV artifacts'
-          with:
-            name: CSV
-            path: tables/
-        - uses: actions/upload-artifact@v2.2.3
-          name: 'Upload RON artifacts'
-          with:
-            name: RON
-            path: objects/
+# This should be fixed later
+#        - uses: actions/upload-artifact@v2.2.3
+#          name: 'Upload CSV artifacts'
+#          with:
+#            name: CSV
+#            path: tables/
+#        - uses: actions/upload-artifact@v2.2.3
+#          name: 'Upload RON artifacts'
+#          with:
+#            name: RON
+#            path: objects/
