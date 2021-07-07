@@ -7,7 +7,7 @@ on:
 name: Daily
 
 jobs:
-  build_and_run:
+  list_files:
       name: Build & Run
       runs-on: ubuntu-latest
       steps:
