@@ -1,0 +1,18 @@
+[package]
+name = "control-tables"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+thiserror = "1.0.26"
+
+[features]
+default = ["AX", "DX", "EX", "MX", "P", "PRO", "RX", "X"]
+AX = []
+DX = []
+EX = []
+MX = []
+P = []
+PRO = []
+RX = []
+X = []
