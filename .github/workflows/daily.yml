@@ -20,6 +20,7 @@ jobs:
           name: 'Install nightly toolchain'
           with:
             toolchain: nightly
+            components: rustfmt
         - run: 'cd $GITHUB_WORKSPACE/dynamixel-scraper && cargo build'
           name: 'Build scraper'
         - uses: actions/checkout@v2
@@ -29,6 +30,8 @@ jobs:
             path: lib
         - run: 'cd $GITHUB_WORKSPACE && dynamixel-scraper/target/debug/dynamixel-scraper --lib'
           name: 'Run scraper'
+        - run: 'cd lib && cargo fmt && cd ..'
+          name: 'Format library'
         - uses: EndBug/add-and-commit@v7.2.1
           name: 'Commit changes'
           with:
