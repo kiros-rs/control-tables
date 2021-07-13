@@ -112,8 +112,6 @@ pub enum DataName {
     ReturnDelayTime,
     SecondaryID,
     SecondaryShadowID,
-    SencondaryID,
-    SencondaryShadowID,
     SensedCurrent,
     Shutdown,
     StatusReturnLevel,
@@ -4628,7 +4626,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryShadowID => Ok(ControlTableData {
+            DataName::SecondaryShadowID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -5131,7 +5129,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryShadowID => Ok(ControlTableData {
+            DataName::SecondaryShadowID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -5634,7 +5632,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryShadowID => Ok(ControlTableData {
+            DataName::SecondaryShadowID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -6137,7 +6135,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -6640,7 +6638,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -8012,7 +8010,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -8873,7 +8871,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -9734,7 +9732,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -12425,7 +12423,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -13286,7 +13284,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -14147,7 +14145,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(3)),
                 range: None,
             }),
-            DataName::SencondaryID => Ok(ControlTableData {
+            DataName::SecondaryID => Ok(ControlTableData {
                 address: 12,
                 size: 1,
                 description: None,
@@ -21716,7 +21714,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 2,
                 description: None,
                 access: AccessLevel::Read,
-                initial_value: Some(RangeValue::Integer(1090)),
+                initial_value: Some(RangeValue::Integer(1060)),
                 range: None,
             }),
             DataName::ModelInformation => Ok(ControlTableData {
@@ -21740,7 +21738,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 1,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(12)),
+                initial_value: Some(RangeValue::Integer(1)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(252))),
             }),
             DataName::BaudRate => Ok(ControlTableData {
@@ -21844,7 +21842,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(250)),
+                initial_value: Some(RangeValue::Integer(265)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(1023))),
             }),
             DataName::MaxPositionLimit => Ok(ControlTableData {
@@ -21916,7 +21914,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 2,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(1800)),
+                initial_value: Some(RangeValue::Integer(1000)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(16383))),
             }),
             DataName::VelocityPGain => Ok(ControlTableData {
@@ -21932,7 +21930,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 2,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(2000)),
+                initial_value: Some(RangeValue::Integer(4000)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(16383))),
             }),
             DataName::PositionIGain => Ok(ControlTableData {
