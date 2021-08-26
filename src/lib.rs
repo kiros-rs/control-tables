@@ -4708,7 +4708,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(10765)),
+                initial_value: Some(RangeValue::Integer(4306173)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4306173))),
             }),
             DataName::VelocityLimit => Ok(ControlTableData {
@@ -4742,6 +4742,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(3)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3))),
+            }),
+            DataName::StartupConfiguration => Ok(ControlTableData {
+                address: 60,
+                size: 1,
+                description: None,
+                access: AccessLevel::ReadWrite,
+                initial_value: Some(RangeValue::Integer(0)),
+                range: None,
             }),
             DataName::Shutdown => Ok(ControlTableData {
                 address: 63,
@@ -5063,6 +5071,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(0)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4095))),
             }),
+            DataName::BackupReady => Ok(ControlTableData {
+                address: 878,
+                size: 1,
+                description: None,
+                access: AccessLevel::Read,
+                initial_value: None,
+                range: Some((RangeValue::Integer(0), RangeValue::Integer(1))),
+            }),
             _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
@@ -5211,7 +5227,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(10639)),
+                initial_value: Some(RangeValue::Integer(4255632)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4255632))),
             }),
             DataName::VelocityLimit => Ok(ControlTableData {
@@ -5245,6 +5261,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(3)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3))),
+            }),
+            DataName::StartupConfiguration => Ok(ControlTableData {
+                address: 60,
+                size: 1,
+                description: None,
+                access: AccessLevel::ReadWrite,
+                initial_value: Some(RangeValue::Integer(0)),
+                range: None,
             }),
             DataName::Shutdown => Ok(ControlTableData {
                 address: 63,
@@ -5566,6 +5590,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(0)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4095))),
             }),
+            DataName::BackupReady => Ok(ControlTableData {
+                address: 878,
+                size: 1,
+                description: None,
+                access: AccessLevel::Read,
+                initial_value: None,
+                range: Some((RangeValue::Integer(0), RangeValue::Integer(1))),
+            }),
             _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
@@ -5714,7 +5746,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(9982)),
+                initial_value: Some(RangeValue::Integer(3992644)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3992644))),
             }),
             DataName::VelocityLimit => Ok(ControlTableData {
@@ -5748,6 +5780,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(3)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3))),
+            }),
+            DataName::StartupConfiguration => Ok(ControlTableData {
+                address: 60,
+                size: 1,
+                description: None,
+                access: AccessLevel::ReadWrite,
+                initial_value: Some(RangeValue::Integer(0)),
+                range: None,
             }),
             DataName::Shutdown => Ok(ControlTableData {
                 address: 63,
@@ -6069,6 +6109,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(0)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4095))),
             }),
+            DataName::BackupReady => Ok(ControlTableData {
+                address: 878,
+                size: 1,
+                description: None,
+                access: AccessLevel::Read,
+                initial_value: None,
+                range: Some((RangeValue::Integer(0), RangeValue::Integer(1))),
+            }),
             _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
@@ -6217,7 +6265,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(10867)),
+                initial_value: Some(RangeValue::Integer(4346756)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4346756))),
             }),
             DataName::VelocityLimit => Ok(ControlTableData {
@@ -6251,6 +6299,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(3)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3))),
+            }),
+            DataName::StartupConfiguration => Ok(ControlTableData {
+                address: 60,
+                size: 1,
+                description: None,
+                access: AccessLevel::ReadWrite,
+                initial_value: Some(RangeValue::Integer(0)),
+                range: None,
             }),
             DataName::Shutdown => Ok(ControlTableData {
                 address: 63,
@@ -6572,6 +6628,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(0)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4095))),
             }),
+            DataName::BackupReady => Ok(ControlTableData {
+                address: 878,
+                size: 1,
+                description: None,
+                access: AccessLevel::Read,
+                initial_value: None,
+                range: Some((RangeValue::Integer(0), RangeValue::Integer(1))),
+            }),
             _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
@@ -6720,7 +6784,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(11037)),
+                initial_value: Some(RangeValue::Integer(4414976)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4414976))),
             }),
             DataName::VelocityLimit => Ok(ControlTableData {
@@ -6754,6 +6818,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(3)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3))),
+            }),
+            DataName::StartupConfiguration => Ok(ControlTableData {
+                address: 60,
+                size: 1,
+                description: None,
+                access: AccessLevel::ReadWrite,
+                initial_value: Some(RangeValue::Integer(0)),
+                range: None,
             }),
             DataName::Shutdown => Ok(ControlTableData {
                 address: 63,
@@ -7075,6 +7147,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 initial_value: Some(RangeValue::Integer(0)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4095))),
             }),
+            DataName::BackupReady => Ok(ControlTableData {
+                address: 878,
+                size: 1,
+                description: None,
+                access: AccessLevel::Read,
+                initial_value: None,
+                range: Some((RangeValue::Integer(0), RangeValue::Integer(1))),
+            }),
             _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
         #[cfg(feature = "P")]
@@ -7223,7 +7303,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(11145)),
+                initial_value: Some(RangeValue::Integer(4457932)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4457932))),
             }),
             DataName::VelocityLimit => Ok(ControlTableData {
@@ -7257,6 +7337,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(3)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(3))),
+            }),
+            DataName::StartupConfiguration => Ok(ControlTableData {
+                address: 60,
+                size: 1,
+                description: None,
+                access: AccessLevel::ReadWrite,
+                initial_value: Some(RangeValue::Integer(0)),
+                range: None,
             }),
             DataName::Shutdown => Ok(ControlTableData {
                 address: 63,
@@ -7577,6 +7665,14 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 access: AccessLevel::ReadWrite,
                 initial_value: Some(RangeValue::Integer(0)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(4095))),
+            }),
+            DataName::BackupReady => Ok(ControlTableData {
+                address: 878,
+                size: 1,
+                description: None,
+                access: AccessLevel::Read,
+                initial_value: None,
+                range: Some((RangeValue::Integer(0), RangeValue::Integer(1))),
             }),
             _ => Err(ControlTableError::NoMatchingAddress { model, name }),
         },
@@ -21924,7 +22020,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 2,
                 description: None,
                 access: AccessLevel::Read,
-                initial_value: Some(RangeValue::Integer(1060)),
+                initial_value: Some(RangeValue::Integer(1090)),
                 range: None,
             }),
             DataName::ModelInformation => Ok(ControlTableData {
@@ -21948,7 +22044,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 1,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(1)),
+                initial_value: Some(RangeValue::Integer(12)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(252))),
             }),
             DataName::BaudRate => Ok(ControlTableData {
@@ -22052,7 +22148,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 4,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(265)),
+                initial_value: Some(RangeValue::Integer(250)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(1023))),
             }),
             DataName::MaxPositionLimit => Ok(ControlTableData {
@@ -22132,7 +22228,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 2,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(1000)),
+                initial_value: Some(RangeValue::Integer(1800)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(16383))),
             }),
             DataName::VelocityPGain => Ok(ControlTableData {
@@ -22148,7 +22244,7 @@ pub const fn data(model: Model, name: DataName) -> Result<ControlTableData, Cont
                 size: 2,
                 description: None,
                 access: AccessLevel::ReadWrite,
-                initial_value: Some(RangeValue::Integer(4000)),
+                initial_value: Some(RangeValue::Integer(2000)),
                 range: Some((RangeValue::Integer(0), RangeValue::Integer(16383))),
             }),
             DataName::PositionIGain => Ok(ControlTableData {
